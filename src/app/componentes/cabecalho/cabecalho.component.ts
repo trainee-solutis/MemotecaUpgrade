@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticatorService } from '../login-screen/authenticator.service';
 
 @Component({
   selector: 'app-cabecalho',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  constructor() { }
+  showButton: boolean = true;
+  constructor(private authenticator: AuthenticatorService) { }
 
   ngOnInit(): void {
+    this.authenticator.showButton.subscribe(
+      showBt => this.showButton = showBt
+    )
   }
 
 }

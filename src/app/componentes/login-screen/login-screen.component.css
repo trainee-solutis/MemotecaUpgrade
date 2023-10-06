@@ -58,3 +58,11 @@
   font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
+
+.alert-required{
+  color: red;
+  font-size: 12px;
+  width: 250px;
+  font-family: 'Inter', sans-serif;
+  margin-right: 60px;
+}
