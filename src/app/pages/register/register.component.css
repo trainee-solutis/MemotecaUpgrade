@@ -12,18 +12,25 @@
 }
 .login-screen form{
   width: 400px;
-  height: 300px;
+  height: 500px;
   border-radius: 10px;
   padding: 10px;
   background-color: #C4EDFF;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+}
+.label-name{
+  margin-top: 25px;
+  color: #154580;
+  font-size: 18px;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+
 }
 .label-email{
-  margin-top: 45px;
-  margin-right: 270px;
   color: #154580;
   font-size: 18px;
 
@@ -32,7 +39,6 @@
 
 }
 .label-pwd{
-  margin-right: 270px;
   color: #154580;
   font-size: 18px;
 
@@ -59,19 +65,9 @@
   font-weight: bold;
 }
 
-.button-register {
-  margin-top: 15px;
-  margin-left: 30px;
-  background-color: #5e646b;
-  color: white;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
+.button-verify:hover{
+  background-color: #2069c2;
+  transition: 0.5s;
 }
 
 .alert-required{
@@ -82,3 +78,33 @@
   margin-right: 60px;
 }
 
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: 5px;
+}
+
+.button-register {
+  height: 50px;
+  width: 380px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #154580;
+  color: #FFF;
+  font-size: 16;
+  margin: 25px auto;
+  border: none;
+}
+
+.button-register-disabled {
+  height: 50px;
+  width: 380px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #7c7773;
+  color: #FFF;
+  font-size: 16;
+  margin: 25px auto;
+  border: none;
+}

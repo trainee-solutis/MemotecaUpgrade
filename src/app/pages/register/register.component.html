@@ -1,0 +1,86 @@
+<section class="container login-screen">
+  <header class="header ff-inter"> Preencha com seus dados para realizar o <br> cadastro</header>
+  <form [formGroup]="formsRegister">
+    <label for="name" class="label-name">Nome</label>
+    <input
+      type="textarea"
+      class="input"
+      placeholder="Insira seu nome para Cadastro"
+      formControlName="name">
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('name')?.errors && formsRegister.get('name')?.touched">
+      Name is required
+    </div>
+
+    <label for="email" class="label-email">Email</label>
+    <input
+      type="email"
+      class="input"
+      placeholder="Insira seu email para login"
+      formControlName="email">
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('email')?.errors?.['required'] && formsRegister.get('email')?.touched">
+      Email is required
+    </div>
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('email')?.errors?.['email'] && formsRegister.get('email')?.touched">
+      Invalid email format
+    </div>
+
+
+    <label for="text" class="label-pwd">Senha</label>
+    <input
+      type="password"
+      class="input"
+      placeholder="Insira sua senha de acesso"
+      formControlName="password">
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('password')?.errors?.['required'] && formsRegister.get('password')?.touched">
+      Password is required
+    </div>
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('password')?.hasError('uppercaseRequired') && formsRegister.get('password')?.touched">
+      {{ customPasswordErrors.uppercaseRequired}} <br>
+      {{ customPasswordErrors.symbolRequired }}
+    </div>
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('password')?.hasError('symbolRequired') && formsRegister.get('password')?.touched">
+      {{ customPasswordErrors.uppercaseRequired}} <br>
+      {{ customPasswordErrors.symbolRequired }}
+    </div>
+
+    <label for="text" class="label-pwd">Confirmar Senha</label>
+    <input
+      type="password"
+      class="input"
+      placeholder="Insira sua senha novamente"
+      formControlName="confirmPassword">
+
+      <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('confirmPassword')?.hasError('required') && formsRegister.get('confirmPassword')?.touched">
+      Confirm Password is required
+    </div>
+
+    <div
+      class="mensagem__erro"
+      *ngIf="formsRegister.get('confirmPassword')?.errors && formsRegister.get('confirmPassword')?.touched">
+      Passwords do not match
+    </div>
+
+    <button type="submit" (click)="criarUsuario()" [ngClass]="habilitarBotao()">Cadastrar</button>
+
+  </form>
+</section>

@@ -22,6 +22,9 @@
       <div class="alert-required" *ngIf="formsLogin.get('password')?.errors?.['required'] && formsLogin.get('password')?.touched">
         O campo senha é obrigatório!
       </div>
-    <button type="submit" class="button-verify">Entrar </button>
+    <div class="button-container">
+      <button type="submit" class="button-verify">Entrar </button>
+      <button class="button-register" routerLink="/register">Registrar</button>
+    </div>
   </form>
 </section>
