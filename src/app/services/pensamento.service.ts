@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Pensamento } from './pensamento';
+import { Pensamento } from '../models/pensamento';
 import { Observable } from 'rxjs';
 
 @Injectable({

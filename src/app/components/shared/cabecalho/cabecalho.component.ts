@@ -1,5 +1,5 @@
+import { AuthenticatorService } from './../../../services/authenticator.service';
 import { Component, OnInit } from '@angular/core';
-import { AuthenticatorService } from '../login-screen/authenticator.service';
 
 @Component({
   selector: 'app-cabecalho',

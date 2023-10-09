@@ -1,8 +1,8 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticatorService } from './authenticator.service';
-import { User } from './user';
+import { AuthenticatorService } from '../../services/authenticator.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-login-screen',

@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
-import { PensamentoService } from './../pensamento.service';
-import { Pensamento } from './../pensamento';
+import { PensamentoService } from '../../../services/pensamento.service';
+import { Pensamento } from '../../../models/pensamento';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
