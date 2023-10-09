@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
+import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,13 @@ import { LoginScreenComponent } from './pages/login-screen/login-screen.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: []
+      }
+    }),
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule
@@ -41,3 +49,13 @@ import { LoginScreenComponent } from './pages/login-screen/login-screen.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function jwtOptionsFactory() {
+  return {
+    tokenGetter: () => {
+      return localStorage.getItem('access_token');
+    },
+    allowedDomains: ['localhost:3000'],
+    disallowedRoutes: ['localhost:3000/login']
+  }
+}

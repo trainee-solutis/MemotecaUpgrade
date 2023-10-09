@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../model/User';
 import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +35,8 @@ export class UserService {
     return this.http.get<User>(url)
   }
 
+  buscarPorEmail(email: string): Observable<User[]> {
+    const url = `${this.API}?email=${email}`
+    return this.http.get<User[]>(url)
+  }
 }

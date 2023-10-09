@@ -3,8 +3,8 @@
     {
       "id": 1,
       "name": "admin",
-      "email": "admin",
-      "password": "$2a$08$uDDmgkN1iuENW24.bEQmIeaYeUq0O84sN6CHahhauk0Uy0CfWwYVu",
+      "email": "admin@admin",
+      "password": "123",
       "createdAt": 1696872864210
     }
   ],
