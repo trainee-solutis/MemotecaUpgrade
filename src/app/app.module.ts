@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
+import { NavigationBarComponent } from './components/shared/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginScreenComponent } from './pages/login-screen/login-screen.componen
     EditarPensamentoComponent,
     BotaoCarregarMaisComponent,
     LoginScreenComponent,
-    HomeComponent
+    HomeComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,
