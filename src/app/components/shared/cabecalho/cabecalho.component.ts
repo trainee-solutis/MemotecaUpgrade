@@ -12,6 +12,7 @@ export class CabecalhoComponent implements OnInit {
   constructor(private authenticator: AuthenticatorService) { }
 
   ngOnInit(): void {
+
     this.authenticator.showButton.subscribe(
       showBt => this.showButton = showBt
     )
