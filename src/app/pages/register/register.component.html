@@ -1,86 +1,136 @@
-<section class="container login-screen">
-  <header class="header ff-inter"> Preencha com seus dados para realizar o <br> cadastro</header>
-  <form [formGroup]="formsRegister">
-    <label for="name" class="label-name">Nome</label>
-    <input
-      type="text"
-      class="input"
-      placeholder="Insira seu nome para Cadastro"
-      formControlName="name">
+<div class="register--container register-screen">
+  <div class="register--content">
+    <h3 class="register--header ff-inter">
+      Preencha com seus dados para realizar o <br />
+      cadastro
+    </h3>
+    <form class="register--form" [formGroup]="formsRegister">
+      <div class="register--form__item">
+        <label for="name" class="register--label">Nome</label>
+        <input
+          type="text"
+          class="register--input input"
+          placeholder="Insira seu nome para Cadastro"
+          formControlName="name"
+        />
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('name')?.errors && formsRegister.get('name')?.touched && formsRegister.get('email')?.dirty">
-      Nome é obrigatório
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="
+            formsRegister.get('name')?.errors &&
+            formsRegister.get('name')?.touched &&
+            formsRegister.get('email')?.dirty
+          "
+        >
+          Nome é obrigatório
+        </div>
+      </div>
 
-    <label for="email" class="label-email">Email</label>
-    <input
-      type="email"
-      class="input"
-      placeholder="Insira seu email para login"
-      formControlName="email">
+      <div class="register--form__item">
+        <label for="email" class="register--label">Email</label>
+        <input
+          type="email"
+          class="register--input input"
+          placeholder="Insira seu email para login"
+          formControlName="email"
+        />
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('email')?.errors?.['required'] && formsRegister.get('email')?.touched && formsRegister.get('email')?.dirty">
-      E-mail é obrigatório
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="formsRegister.get('email')?.errors?.['required'] && formsRegister.get('email')?.touched && formsRegister.get('email')?.dirty"
+        >
+          E-mail é obrigatório
+        </div>
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('email')?.errors?.['email'] && formsRegister.get('email')?.touched && formsRegister.get('email')?.dirty">
-      Formato de e-mail inválido
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="formsRegister.get('email')?.errors?.['email'] && formsRegister.get('email')?.touched && formsRegister.get('email')?.dirty"
+        >
+          Formato de e-mail inválido
+        </div>
+      </div>
 
+      <div class="register--form__item">
+        <label for="text" class="register--label">Senha</label>
+        <input
+          type="password"
+          class="register--input input"
+          placeholder="Insira sua senha de acesso"
+          formControlName="password"
+        />
 
-    <label for="text" class="label-pwd">Senha</label>
-    <input
-      type="password"
-      class="input"
-      placeholder="Insira sua senha de acesso"
-      formControlName="password">
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="formsRegister.get('password')?.errors?.['required'] && formsRegister.get('password')?.touched && formsRegister.get('email')?.dirty"
+        >
+          Senha é obrigatório
+        </div>
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('password')?.errors?.['required'] && formsRegister.get('password')?.touched && formsRegister.get('email')?.dirty">
-      Senha é obrigatório
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="
+            formsRegister.get('password')?.hasError('uppercaseRequired') &&
+            formsRegister.get('password')?.touched &&
+            formsRegister.get('email')?.dirty
+          "
+        >
+          {{ customPasswordErrors.uppercaseRequired }} <br />
+          {{ customPasswordErrors.symbolRequired }}
+        </div>
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('password')?.hasError('uppercaseRequired') && formsRegister.get('password')?.touched && formsRegister.get('email')?.dirty">
-      {{ customPasswordErrors.uppercaseRequired}} <br>
-      {{ customPasswordErrors.symbolRequired }}
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="
+            formsRegister.get('password')?.hasError('symbolRequired') &&
+            formsRegister.get('password')?.touched &&
+            formsRegister.get('email')?.dirty
+          "
+        >
+          {{ customPasswordErrors.uppercaseRequired }} <br />
+          {{ customPasswordErrors.symbolRequired }}
+        </div>
+      </div>
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('password')?.hasError('symbolRequired') && formsRegister.get('password')?.touched && formsRegister.get('email')?.dirty">
-      {{ customPasswordErrors.uppercaseRequired}} <br>
-      {{ customPasswordErrors.symbolRequired }}
-    </div>
+      <div class="register--form__item">
+        <label for="text" class="register--label">Confirmar Senha</label>
+        <input
+          type="password"
+          class="register--input input"
+          placeholder="Insira sua senha novamente"
+          formControlName="confirmPassword"
+        />
 
-    <label for="text" class="label-pwd">Confirmar Senha</label>
-    <input
-      type="password"
-      class="input"
-      placeholder="Insira sua senha novamente"
-      formControlName="confirmPassword">
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="
+            formsRegister.get('confirmPassword')?.hasError('required') &&
+            formsRegister.get('confirmPassword')?.touched &&
+            formsRegister.get('email')?.dirty
+          "
+        >
+          Campo de confirmar a senha é obrigatório
+        </div>
 
-      <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('confirmPassword')?.hasError('required') && formsRegister.get('confirmPassword')?.touched && formsRegister.get('email')?.dirty">
-      Campo de confirmar a senha é obrigatório
-    </div>
+        <div
+          class="register--form__error mensagem__erro"
+          *ngIf="
+            formsRegister.get('confirmPassword')?.errors &&
+            formsRegister.get('confirmPassword')?.touched &&
+            formsRegister.get('email')?.dirty
+          "
+        >
+          As senhas não são compatíveis
+        </div>
+      </div>
 
-    <div
-      class="mensagem__erro"
-      *ngIf="formsRegister.get('confirmPassword')?.errors && formsRegister.get('confirmPassword')?.touched && formsRegister.get('email')?.dirty">
-      As senhas não são compatíveis
-    </div>
-
-    <button type="submit" (click)="criarUsuario()" [ngClass]="habilitarBotao()">Cadastrar</button>
-
-  </form>
-</section>
+      <button
+        class="register--button"
+        type="submit"
+        (click)="criarUsuario()"
+        [ngClass]="habilitarBotao()"
+      >
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>
