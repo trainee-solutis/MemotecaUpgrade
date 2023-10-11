@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabecalhoComponent implements OnInit {
 
-  showButton: boolean = true;
-  constructor(private authenticator: AuthenticatorService) { }
+  constructor() { }
 
   ngOnInit(): void {
+
     this.authenticator.showButton.subscribe(
       showBt => this.showButton = showBt
     )

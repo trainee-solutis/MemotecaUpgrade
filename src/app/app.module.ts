@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { RegisterComponent } from './pages/register/register.component';
+import { NavigationBarComponent } from './components/shared/navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RegisterComponent } from './pages/register/register.component';
     BotaoCarregarMaisComponent,
     LoginScreenComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavigationBarComponent
   ],
   imports: [
     BrowserModule,

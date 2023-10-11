@@ -1,4 +1,4 @@
-import { GuardRoutes } from './pages/login-screen/guardRoutes';
+import { GuardRoutes } from './services/guardRoutes';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { CriarPensamentoComponent } from './components/pensamentos/criar-pensamento/criar-pensamento.component';
 import { ListarPensamentoComponent } from './components/pensamentos/listar-pensamento/listar-pensamento.component';
@@ -18,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginScreenComponent
+    component: LoginScreenComponent,
+    canActivate: [GuardRoutes]
   },
   {
     path: 'register',
@@ -46,7 +47,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [GuardRoutes] //Apenas para validar sessão e desativar o botão de Login
   }
 
 ];
