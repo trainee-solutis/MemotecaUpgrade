@@ -1,16 +1,23 @@
 <section class="container login-screen">
-  <header class="header ff-inter"> Realize o seu login aqui:</header>
+  <header class="header ff-inter">Realize o seu login aqui:</header>
   <form [formGroup]="formsLogin" (ngSubmit)="autenticator()">
     <label for="email" class="label-email">Email</label>
     <input
       type="email"
       class="input"
       placeholder="Insira seu email para login"
-      formControlName="email">
-    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['email']">
+      formControlName="email"
+    />
+    <div
+      class="alert-required"
+      *ngIf="formsLogin.get('email')?.errors?.['email']"
+    >
       Preencha corretamente: "@email.com"
     </div>
-    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['required'] && formsLogin.get('email')?.touched">
+    <div
+      class="alert-required"
+      *ngIf="formsLogin.get('email')?.errors?.['required'] && formsLogin.get('email')?.touched"
+    >
       O campo email é obrigatório!
     </div>
     <label for="text" class="label-pwd">Senha</label>
@@ -18,10 +25,31 @@
       type="password"
       class="input"
       placeholder="Insira sua senha de acesso"
-      formControlName="password">
-      <div class="alert-required" *ngIf="formsLogin.get('password')?.errors?.['required'] && formsLogin.get('password')?.touched">
-        O campo senha é obrigatório!
-      </div>
-    <button type="submit" class="button-verify">Entrar </button>
+      formControlName="password"
+    />
+    <div
+      class="alert-required"
+      *ngIf="formsLogin.get('password')?.errors?.['required'] && formsLogin.get('password')?.touched"
+    >
+      O campo senha é obrigatório!
+    </div>
+    <div class="google-btn botao1">
+      <button type="submit"><p>Entrar</p></button>
+    </div>
+    <div class="vl">
+      <span class="vl-innertext">ou</span>
+    </div>
+    <div class="google-btn botao2">
+      <button type="submit">
+        <img
+          alt="Google sign-in"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+        />
+        <p>Entrar com google</p>
+      </button>
+    </div>
+    <div class="vl">
+    </div>
+    <button class="forgotPwd" routerLink="/esqueceuSenha"> Esqueceu sua senha?</button>
   </form>
 </section>
