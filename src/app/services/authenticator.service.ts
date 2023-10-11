@@ -1,26 +1,18 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticatorService {
-  private loggedUser: User | null = null;
+  private loggedUser: boolean | null = null;
 
   showButton = new EventEmitter<boolean>();
-  constructor() { }
+  constructor(private service: UserService) { }
 
-  login(user: User): boolean{
-    if(user.email === 'admin@email.com' && user.password === 'admin'){
-      this.loggedUser = {
-        email:user.email,
-        password:user.password
-      }
-      this.showButton.emit(false);
-      return true;
-    }
-    this.showButton.emit(true);
+  login(email: String, password: String): boolean{
     return false;
   }
 

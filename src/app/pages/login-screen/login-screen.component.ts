@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticatorService } from '../../services/authenticator.service';
-import { User } from '../../models/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -13,14 +13,10 @@ export class LoginScreenComponent implements OnInit {
 
   formsLogin!: FormGroup;
 
-  user: User ={
-    email: '',
-    password: ''
-  }
-
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    private userService: UserService,
     private authenticatorService: AuthenticatorService
   ) { }
 
@@ -49,18 +45,18 @@ export class LoginScreenComponent implements OnInit {
       const email = this.formsLogin.get('email')?.value;
       const password = this.formsLogin.get('password')?.value;
 
-      const user: User = {
-        email: email,
-        password: password
-      };
+      this.userService.buscarPorEmail(email).subscribe(
+        (users) => {
+          if (users.length > 0) {
+            const user = users.find((user) => user.email === email);
+            if (user) {
 
-      if(this.authenticatorService.login(user)){
-        console.log(this.formsLogin);
-        alert("Login efetuado com sucesso.")
-        this.router.navigate(['/listarPensamento'])
-      }else{
-        alert("Email ou senha incorretos!")
-      }
+          } else {
+            console.log("Usuário não encontrado");
+          }
+          }
+        }
+      )
     }
   }
 

@@ -1,4 +1,13 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@admin",
+      "password": "123",
+      "createdAt": 1696872864210
+    }
+  ],
   "pensamentos": [
     {
       "id": 2,
