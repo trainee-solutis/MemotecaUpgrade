@@ -1,62 +1,106 @@
-.login-screen{
+.login-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 90vh;
 }
-.header{
+
+.header {
   color: #154580;
   font-size: 25px;
   text-align: center;
   margin-top: 50px;
 }
-.login-screen form{
+
+.login-screen form {
   width: 400px;
-  height: 300px;
   border-radius: 10px;
   padding: 10px;
-  background-color: #C4EDFF;
+  background-color: #c4edff;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
-.label-email{
+
+.label-email {
   margin-top: 45px;
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
-
 }
-.label-pwd{
+
+.label-pwd {
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
 }
-.input{
+
+.input {
   width: 300px;
   border-radius: 10px;
   border: none;
   padding: 15px;
 }
-.button-verify{
+
+.botao1 button {
+  width: 330px;
+  display: flex;
   margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #154580;
   color: white;
-  width: 100px;
-  padding: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10%;
+
+  &:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+
+  &:active {
+    background: #1669f2;
+  }
+}
+
+.button-register {
+  margin-top: 15px;
+  margin-left: 30px;
+  background-color: #5e646b;
+  color: white;
+  padding: 15px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
+  margin-bottom: 8%;
+
+  &:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+
+  &:active {
+    background: #1669f2;
+  }
+}
+
+.botao2 p {
+  margin-left: 5%;
 }
 
 .button-register {
@@ -70,15 +114,53 @@
   border-radius: 10px;
   cursor: pointer;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
 }
 
-.alert-required{
+.alert-required {
   color: red;
   font-size: 12px;
   width: 250px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-right: 60px;
 }
 
+.botao2 img {
+  width: 20px;
+}
+
+.vl {
+  color: white;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #a0cde1;
+  width: 90%;
+  margin: 5% 0%;
+  font-size: 30px;
+  align-items: center;
+  margin-top: 0%;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+  position: absolute;
+  background-color: #a0cde1;
+  border: 1px solid #a0cde1;
+  border-radius: 100%;
+  padding: 8px 10px;
+}
+
+.forgotPwd {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  margin-bottom: 5%;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
