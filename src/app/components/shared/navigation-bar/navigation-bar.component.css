@@ -1,3 +1,65 @@
-.nav-bar{
+.nav-bar--container{
+  background: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.nav-bar--content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo--solutis{
+  width: 220px;
+}
+
+.nav-bar__button--list{
+  display: flex;
+  gap: 5px;
+}
+
+.navbar__button{
+  width: 120px;
   background-color: #154580;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.navbar__button:hover {
+  border: 2px solid #84EEC1;
+  color: #84EEC1;
+}
+
+@media (min-width: 576px) {
+  .nav-bar--content {
+      width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .nav-bar--content {
+      width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .nav-bar--container{
+      height: 90px;
+  }
+  .nav-bar--content {
+      width: 960px;
+  }
+  .navbar__logo--solutis{
+      width: 264px;
+  }
+}
+@media (min-width: 1200px) {
+  .nav-bar--content {
+      width: 1140px;
+  }
 }

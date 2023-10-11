@@ -11,7 +11,6 @@ export class CabecalhoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }
