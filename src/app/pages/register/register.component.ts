@@ -14,8 +14,8 @@ export class RegisterComponent implements OnInit {
   formsRegister!: FormGroup;
 
   customPasswordErrors = {
-    uppercaseRequired: 'The password should contain at least 1 uppercase character.',
-    symbolRequired: 'The password must contain at least one symbol.'
+    uppercaseRequired: 'A senha deve conter pelo menos uma letra maiúscula.',
+    symbolRequired: 'A senha deve conter pelo menos um símbolo.'
   }
 
   constructor(
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
         name: this.formsRegister.value.name,
         email: this.formsRegister.value.email,
         password: this.formsRegister.value.password,
-        createdAt: new Date(), // Você pode definir a data atual aqui
+        createdAt: new Date(),
       };
       this.service.criar(user).subscribe(() => {
         this.router.navigate(['/login'])

@@ -45,12 +45,10 @@ export class LoginScreenComponent implements OnInit {
       const email = this.formsLogin.get('email')?.value;
       const password = this.formsLogin.get('password')?.value;
 
-      console.log(email, password)
-
       this.userService.buscarPorEmail(email).subscribe(
         (users) => {
           if (users.length > 0) {
-            const user = users.find((user) => user.password === password);
+            const user = users.find((user) => user.email === email);
             if (user) {
 
           } else {

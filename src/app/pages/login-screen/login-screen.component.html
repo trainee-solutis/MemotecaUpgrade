@@ -7,10 +7,10 @@
       class="input"
       placeholder="Insira seu email para login"
       formControlName="email">
-    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['email']">
+    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['email'] && formsLogin.get('email')?.touched && formsLogin.get('email')?.dirty">
       Preencha corretamente: "@email.com"
     </div>
-    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['required'] && formsLogin.get('email')?.touched">
+    <div class="alert-required" *ngIf="formsLogin.get('email')?.errors?.['required'] && formsLogin.get('email')?.touched && formsLogin.get('email')?.dirty">
       O campo email é obrigatório!
     </div>
     <label for="text" class="label-pwd">Senha</label>
@@ -23,7 +23,7 @@
         O campo senha é obrigatório!
       </div>
     <div class="button-container">
-      <button type="submit" class="button-verify">Entrar </button>
+      <button type="submit" class="button-verify" (click)="autenticator()">Entrar</button>
       <button class="button-register" routerLink="/register">Registrar</button>
     </div>
   </form>
