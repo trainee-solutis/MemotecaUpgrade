@@ -1,12 +1,13 @@
-<div class="nav-bar ff-inter">
+<div class="nav-bar--container">
+  <div class="nav-bar--content ff-inter">
     <a href="">
-        <img src="" alt="" class="navbar__logo--solutis">
+        <img src="/assets/imagens/logo-solutis.png" alt="" class="navbar__logo--solutis">
     </a>
-    <div class="nav-bar__buttons" *ngIf="!authLoggedUser">
-        <button class="navbar__button navbar__button--cadastrar" routerLink="/login">Cadastrar</button>
-        <button class="navbar__button navbar__button--login" routerLink="/login">Login</button>
+    <div class="nav-bar__buttons--list">
+        <button class="navbar__button navbar__button--cadastrar" routerLink="/login" *ngIf="!authLoggedUser">Cadastrar</button>
+        <button class="navbar__button navbar__button--login" routerLink="/login" *ngIf="!authLoggedUser">Login</button>
+        <button (click)="logout()" class="navbar__button navbar__button--logout" routerLink="/home" *ngIf="authLoggedUser">Logout</button>
+        <button class="navbar__button navbar__button--logout" routerLink="/listarPensamento" *ngIf="authLoggedUser">Ver pensamentos</button>
     </div>
-    <div class="nav-bar__buttons"*ngIf="authLoggedUser" >
-      <button (click)="logout()" class="navbar__button navbar__button--logout" routerLink="/home">Logout</button>
-    </div>
+  </div>
 </div>
