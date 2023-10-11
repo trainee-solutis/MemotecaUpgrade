@@ -43,20 +43,3 @@
     display: none;
   }
 }
-.header-botton{
-  display: flex;
-  flex-direction: column;
-  height: 270px;
-  gap: 10px;
-}
-
-.botton-login{
-  margin-left: 200px;
-  width: 120px;
-  background-color: #154580;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  border: solid #154580;
-  cursor: pointer;
-}
