@@ -1,0 +1,85 @@
+.login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+}
+
+.header {
+  color: #154580;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.login-screen form {
+  width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #C4EDFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.label-email {
+  margin-top: 45px;
+  margin-right: 270px;
+  color: #154580;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+
+}
+
+.label-pwd {
+  margin-right: 270px;
+  color: #154580;
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}
+
+.input {
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+
+.botao1 button {
+  width: 330px;
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #154580;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  margin-bottom: 10%;
+
+  &:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+
+  &:active {
+    background: #1669F2;
+  }
+}
+
+.alert-required {
+  color: red;
+  font-size: 12px;
+  width: 250px;
+  font-family: 'Inter', sans-serif;
+  margin-right: 60px;
+}

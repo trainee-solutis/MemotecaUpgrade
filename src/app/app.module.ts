@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './pages/login-screen/login-screen.component';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { NavigationBarComponent } from './components/shared/navigation-bar/navigation-bar.component';
+import { EsqueceuSenhaComponent } from './pages/esqueceu-senha/esqueceu-senha.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NavigationBarComponent } from './components/shared/navigation-bar/navig
     BotaoCarregarMaisComponent,
     LoginScreenComponent,
     HomeComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    EsqueceuSenhaComponent
   ],
   imports: [
     BrowserModule,
