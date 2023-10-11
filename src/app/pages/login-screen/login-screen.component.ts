@@ -40,26 +40,13 @@ export class LoginScreenComponent implements OnInit {
     }
   }
 
-  autenticator(){
+  async autenticator(){
     if(this.validator()){
       const email = this.formsLogin.get('email')?.value;
       const password = this.formsLogin.get('password')?.value;
-
-      this.userService.buscarPorEmail(email).subscribe(
-        (users) => {
-          if (users.length > 0) {
-            const user = users.find((user) => user.email === email);
-            if (user) {
-
-          } else {
-            console.log("Usuário não encontrado");
-          }
-          }
-        }
-      )
+      if(await this.authenticatorService.login(email, password)){
+        this.router.navigate(['listarPensamento'])
+      }
     }
   }
-
-
-
 }

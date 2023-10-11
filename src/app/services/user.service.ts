@@ -39,4 +39,9 @@ export class UserService {
     const url = `${this.API}?email=${email}`
     return this.http.get<User[]>(url)
   }
+
+  buscarLogin(email: string, password: string): Observable<User[]> {
+    const url = `${this.API}?email=${email}&password=${password}`
+    return this.http.get<User[]>(url)
+  }
 }

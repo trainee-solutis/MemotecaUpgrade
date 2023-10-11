@@ -12,6 +12,9 @@ export class CabecalhoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.authenticator.showButton.subscribe(
+      showBt => this.showButton = showBt
+    )
   }
 
 }
