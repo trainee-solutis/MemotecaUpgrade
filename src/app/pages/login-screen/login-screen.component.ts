@@ -46,6 +46,8 @@ export class LoginScreenComponent implements OnInit {
       const password = this.formsLogin.get('password')?.value;
       if(await this.authenticatorService.login(email, password)){
         this.router.navigate(['listarPensamento'])
+      }else{
+        alert("email ou senha incorretos!")
       }
     }
   }

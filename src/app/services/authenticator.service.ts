@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
 import * as jose from 'jose';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +13,12 @@ export class AuthenticatorService {
     'cc7e0d44fd473002f1c42167459001140ec6389b7353f8088f4d9a95f2f596f2'
   );
 
-  private loggedUser: boolean | null = null;
+  private loggedUser: boolean  = true;
 
   private currentUser: User | null = null;
 
   showButton = new EventEmitter<boolean>();
+
   constructor(private userService: UserService) {}
 
   async login(email: string, password: string): Promise<boolean> {
@@ -94,7 +96,7 @@ export class AuthenticatorService {
       this.currentUser = user;
 
       this.loggedUser = true;
-      this.showButton.emit(false);
+      this.showButton.emit(true);
       return true;
     } catch (error) {
       this.logOut();
@@ -104,6 +106,7 @@ export class AuthenticatorService {
 
   logOut() {
     localStorage.removeItem('token');
-    this.loggedUser = null;
+    this.loggedUser = false
+    this.showButton.emit(false);
   }
 }
