@@ -34,7 +34,7 @@ import { EsqueceuSenhaComponent } from './pages/esqueceu-senha/esqueceu-senha.co
     LoginScreenComponent,
     HomeComponent,
     NavigationBarComponent,
-    EsqueceuSenhaComponent
+    EsqueceuSenhaComponent,
     RegisterComponent,
     NavigationBarComponent
   ],

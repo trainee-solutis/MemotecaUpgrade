@@ -50,13 +50,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [GuardRoutes] //Apenas para validar sessão e desativar o botão de Login
-  }
-  ,
+  },
   {
     path: 'esqueceuSenha',
     component: EsqueceuSenhaComponent,
   }
-
 ];
 
 @NgModule({

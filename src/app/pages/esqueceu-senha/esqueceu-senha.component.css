@@ -17,7 +17,7 @@
   width: 400px;
   border-radius: 10px;
   padding: 10px;
-  background-color: #C4EDFF;
+  background-color: #c4edff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,16 +29,15 @@
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
-
 }
 
 .label-pwd {
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
 }
 
@@ -63,7 +62,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
   margin-bottom: 10%;
 
@@ -72,7 +71,7 @@
   }
 
   &:active {
-    background: #1669F2;
+    background: #1669f2;
   }
 }
 
@@ -80,6 +79,6 @@
   color: red;
   font-size: 12px;
   width: 250px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-right: 60px;
 }
