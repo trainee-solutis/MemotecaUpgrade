@@ -3,10 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm-run-all --parallel ng-serve backend-json-server backend-index",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ng-serve": "ng serve",
+    "backend-json-server": "cd backend/json-server && npm start >nul 2>&1",
+    "backend-index": "cd backend/email-sender && npm start >nul 2>&1",
+    "install-all": "npm install && npm-run-all install-backend-json-server install-backend-email-sender",
+    "install-backend-json-server": "npm install --prefix backend/json-server",
+    "install-backend-email-sender": "npm install --prefix backend/email-sender"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +44,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "npm-run-all": "^4.1.5",
     "typescript": "~4.7.2"
   }
 }
