@@ -4,12 +4,15 @@
   align-items: center;
   height: 90vh;
 }
+
 .header {
   color: #154580;
-  font-size: 25px;
+  font-size: 40px;
   text-align: center;
   margin-top: 50px;
+  font-weight: bold;
 }
+
 .login-screen form {
   width: 400px;
   border-radius: 10px;
@@ -20,56 +23,56 @@
   align-items: center;
   gap: 10px;
 }
+
 .label-email {
   margin-top: 45px;
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
-
   font-family: "Inter", sans-serif;
   font-weight: bold;
 }
+
 .label-pwd {
   margin-right: 270px;
   color: #154580;
   font-size: 18px;
-
   font-family: "Inter", sans-serif;
   font-weight: bold;
 }
+
 .input {
   width: 300px;
   border-radius: 10px;
   border: none;
   padding: 15px;
 }
-.button-verify {
+
+.botao1 button {
+  width: 330px;
+  display: flex;
   margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #154580;
   color: white;
-  width: 100px;
-  padding: 10px;
+  padding: 15px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-
+  font-size: 15px;
   font-family: "Inter", sans-serif;
   font-weight: bold;
-}
+  margin-bottom: 10%;
 
-.button-register {
-  margin-top: 15px;
-  margin-left: 30px;
-  background-color: #5e646b;
-  color: white;
-  width: 100px;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+  &:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
 
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
+  &:active {
+    background: #1669f2;
+  }
 }
 
 .alert-required {
@@ -78,16 +81,4 @@
   width: 250px;
   font-family: "Inter", sans-serif;
   margin-right: 60px;
-}
-.forgotPwd {
-  background: none;
-  border: none;
-  font-size: 15px;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }

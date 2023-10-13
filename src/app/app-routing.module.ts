@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './pages/register/register.component';
+import { EsqueceuSenhaComponent } from './pages/esqueceu-senha/esqueceu-senha.component';
 
 const routes: Routes = [
   {
@@ -49,8 +50,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [GuardRoutes] //Apenas para validar sessão e desativar o botão de Login
+  },
+  {
+    path: 'esqueceuSenha',
+    component: EsqueceuSenhaComponent,
   }
-
 ];
 
 @NgModule({

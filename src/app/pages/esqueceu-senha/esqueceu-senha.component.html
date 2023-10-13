@@ -1,0 +1,31 @@
+<section class="container login-screen">
+  <header class="header ff-inter">
+    Esqueceu Sua Senha?
+    <h2>Digite seu e-mail e nós enviaremos o link para recuperar sua senha.</h2>
+  </header>
+  <form [formGroup]="formsLogin">
+    <label for="email" class="label-email">Email</label>
+    <input
+      type="email"
+      class="input"
+      placeholder="Insira seu email para recuperação de senha"
+      formControlName="email"
+    />
+    <div
+      class="alert-required"
+      *ngIf="formsLogin.get('email')?.errors?.['email']"
+    >
+      Preencha corretamente: "@email.com"
+    </div>
+    <div
+      class="alert-required"
+      *ngIf="formsLogin.get('email')?.errors?.['required'] && formsLogin.get('email')?.touched"
+    >
+      O campo email é obrigatório!
+    </div>
+
+    <div class="google-btn botao1">
+      <button type="submit"><p>Enviar</p></button>
+    </div>
+  </form>
+</section>
